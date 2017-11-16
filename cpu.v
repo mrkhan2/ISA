@@ -8,7 +8,7 @@ output reg [15:0] pc; 	// Program counter
 
 wire Z, N,V,br;
 wire [15:0] operation, input1, input2, result, dmResult, writeResult;
-reg [15:0] store, addr;
+reg [15:0] store, addr, counter;
 wire [3:0] Rs, Rd, Rt;
 wire[ 7:0] ctrl_signals;
 wire[2:0] cond;
@@ -16,8 +16,10 @@ wire [15:0] pc_incr, jReg, jCall ,brVal;
 wire [11:0] call;
 wire [8:0] imm;
 
-
-
+initial 
+begin
+counter = 0;
+end
 
 //PROGRAM COUNTER
 always @(posedge clk or negedge rst_n) begin 
@@ -39,8 +41,8 @@ always @(posedge clk or negedge rst_n) begin
 			store =result;
 			addr = result;
 			hlt = ctrl_signals[3];
-
-
+		//	counter++;
+		//$display("counter = %d\n" , counter);
 		//$display(" operation = %h \n   \ninput1 = %h\n dmResult = %h  \nresult = %h ", operation, input1, dmResult, result);
 
 	end
