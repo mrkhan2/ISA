@@ -1,0 +1,8 @@
+control.v
+branch.v
+alu.v
+dataMem.v
+instructionMem.v
+regFile.v
+cputb.v
+cpu.v

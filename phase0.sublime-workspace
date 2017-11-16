@@ -1,0 +1,267 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Preferences: Settings – Syntax Specific"
+			],
+			[
+				"synt",
+				"Preferences: Settings – Syntax Specific"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/instructionMem.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/instruction.list",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/regFile.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/test1.list",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/files.txt",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/cpu.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/test2.txt",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/test2.list",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/test3.txt",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/test3.list",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/logic_outputs.txt",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/cputb.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/test1.txt",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/branch.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/control.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/alu.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/dataMem.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/alutb.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/pc.v",
+		"/Users/mohsinkhan/Documents/Verilog/F17_Stage0/dataMem.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/file_list.txt",
+		"/Users/mohsinkhan/Documents/Verilog/F17_Stage0/instructionMem.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/module fulladdertb;",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/phase0.sublime-workspace",
+		"/Users/mohsinkhan/Documents/Verilog/F17_Stage0/alu.v",
+		"/Users/mohsinkhan/Documents/Verilog/ex9:27/ex927tb.v",
+		"/Users/mohsinkhan/Documents/Verilog/ex9:27/ex927.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/addv.v",
+		"/Users/mohsinkhan/Documents/Verilog/phase 0/add.v",
+		"/Users/mohsinkhan/Documents/Verilog/F17_Stage0/instruction.list",
+		"/Users/mohsinkhan/Downloads/toyrepo.dumpfile",
+		"/Users/mohsinkhan/Desktop/private/cs354/p2/generate_magic.c",
+		"/Users/mohsinkhan/Desktop/private/cs354/p2/verify_hetero.c",
+		"/Users/mohsinkhan/Documents/Verilog/1002/1002.v",
+		"/Users/mohsinkhan/Documents/Verilog/ex9:27/README.txt",
+		"/Users/mohsinkhan/Documents/Verilog/simple.v",
+		"/Users/mohsinkhan/Downloads/fuck/xv6_fsck.c",
+		"/Users/mohsinkhan/Downloads/p4a/server_cond.c",
+		"/Users/mohsinkhan/Downloads/fuck/fs.h",
+		"/Users/mohsinkhan/Downloads/cs537-master/p3/xv6/kernel/syscall.c",
+		"/Users/mohsinkhan/Downloads/cs537-master/p3/xv6/kernel/proc.c",
+		"/Users/mohsinkhan/Downloads/cs537-master/p3/xv6/kernel/defs.h",
+		"/Users/mohsinkhan/Downloads/cs537-master/p3/xv6/kernel/string.c",
+		"/Users/mohsinkhan/Downloads/cs537-master/p3/xv6/include/x86.h",
+		"/Users/mohsinkhan/Downloads/Untitled_Message/shm_server.c",
+		"/Users/mohsinkhan/Downloads/Untitled_Message/shm_client.c",
+		"/Users/mohsinkhan/Downloads/xsh.c",
+		"/Users/mohsinkhan/Downloads/xsh-2.c",
+		"/Users/mohsinkhan/Payper/package.json",
+		"/Users/mohsinkhan/Desktop/Payper/android/app/src/main/java/com/payper/MainActivity.java",
+		"/Users/mohsinkhan/Desktop/Payper/android/app/src/main/java/com/payper/MainApplication.java",
+		"/Users/mohsinkhan/Desktop/Payper/android/app/build.gradle",
+		"/Users/mohsinkhan/Desktop/Payper/package.json",
+		"/Users/mohsinkhan/Payper/scenes/Splash.js",
+		"/Users/mohsinkhan/Downloads/payperv2-dev-renewablePayments-export.json",
+		"/Users/mohsinkhan/Downloads/Mohsin.json",
+		"/Users/mohsinkhan/Documents/Photoshop/rig.json",
+		"/Users/mohsinkhan/Payper/node_modules/react-native/Libraries/Core/InitializeCore.js",
+		"/Users/mohsinkhan/Desktop/gradle.properties",
+		"/Users/mohsinkhan/Payper/node_modules/react-native/Libraries/JavaScriptAppEngine/Initialization/InitializeJavaScriptAppEngine.js",
+		"/Users/mohsinkhan/Downloads/materialize/css/materialize.css",
+		"/Users/mohsinkhan/Downloads/materialize/js/materialize.js"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+			"",
+			"<current file>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"branch",
+			"BRANCH",
+			"NO_BRANCH",
+			"BRANCH",
+			"flags[V]",
+			"flags[N]",
+			"flags[Z]",
+			"wD_",
+			"assign",
+			"resul",
+			"test",
+			"we",
+			"assign",
+			"always",
+			"end",
+			"\";\n",
+			"shift",
+			"b1111000000000101",
+			";\n",
+			"fulladdertb",
+			"Op",
+			"V"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"br",
+			"1'b1",
+			"1'b0",
+			"1'b1",
+			"V",
+			"N",
+			"Z",
+			"AddSub"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
