@@ -36,12 +36,12 @@ always @(posedge clk or negedge rst_n) begin
 
 		else pc= pc_incr;
 		
-			store = ctrl_signals[1] ? dmResult : result;
+			store =result;
 			addr = result;
 			hlt = ctrl_signals[3];
 
 
-		$display(" operation = %h \n   \ninput1 = %h\n dmResult = %h  \nresult = %h ", operation, input1, dmResult, result);
+		//$display(" operation = %h \n   \ninput1 = %h\n dmResult = %h  \nresult = %h ", operation, input1, dmResult, result);
 
 	end
 

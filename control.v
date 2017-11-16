@@ -147,8 +147,8 @@ always@(*) begin
     //LW OP
  else if(operation[15:12] == 4'b1000)
     begin 
-  	    rs = operation[7:4]+ operation [3:0];
-        rd = operation [11:8];
+  	    rd = operation[7:4]+ operation [3:0];
+        rs = operation [11:8];
         rt = 0;
     	ctrl_signals[we] = 1;    
     	ctrl_signals[memToreg] = 1;
@@ -212,6 +212,7 @@ else if(operation[15:12] == 4'b1100)
  begin 
   	    cond = operation[11:9];
         imm = operation[8:0];
+        rd = 0;
     	ctrl_signals[we] = 1;
     	ctrl_signals[memToreg] = 0;   
     	ctrl_signals[memWrite] = 0;   

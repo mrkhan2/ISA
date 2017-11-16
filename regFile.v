@@ -3,7 +3,7 @@ input [3:0] Rs, Rt, Rd;
 input we, clk, hlt;
 input [15:0] writeData;
 
-output [15:0] outRs, outRt;
+output reg [15:0] outRs, outRt;
 integer i, indx;
 reg [15:0] regs [0:15];
 
@@ -18,22 +18,34 @@ always@(clk)
 begin
 $display("\n TIME = %2d rs = %h, RT=%h, writeD = %h, Rd = %h outRs= %h  outRT=%h  regs[1] = %h  , regs[2] = %h  reg3 = %h reg4 = %h.   reg5 =%h\n",$time ,Rs, Rt, writeData, Rd, outRs, outRt, regs[1], regs[2],  regs[3], regs[4], regs[5]);
 end
-
 */
+
 always @(posedge clk)   
 if(we) begin
 regs[Rd] = writeData;
+regs[0] = 0;
 end
 
 
-assign outRs = regs[Rs];
-assign outRt = regs[Rt];
+always @(clk,Rs)
+begin
+  if (~clk)
+outRs = regs[Rs];
+end
+
+
+always @(clk,Rt)
+begin
+  if (~clk)
+outRt = regs[Rt];
+
+end
 
 
 
 
 always @(posedge hlt)
-  for(indx=1; indx<16; indx = indx+1)
+  for(indx=0; indx<16; indx = indx+1)
     $display("Reg%d = %h",indx,regs[indx]);
     
 endmodule
