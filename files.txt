@@ -2,6 +2,8 @@ control.v
 branch.v
 alu.v
 dataMem.v
+forward.v
+hazard.v
 instructionMem.v
 regFile.v
 cputb.v
