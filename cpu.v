@@ -18,13 +18,17 @@ wire [8:0] imm;
 
 initial 
 begin
-counter = 0;
+counter = 1;
 end
 
 //PROGRAM COUNTER
 always @(posedge clk or negedge rst_n) begin 
+counter++;
+		if (hlt) begin
+			pc = pc;
+			end
 
-		if(~rst_n || hlt)
+		if(~rst_n)
 			pc = 16'b0;
 			else 
 			if(ctrl_signals[5])
@@ -41,7 +45,7 @@ always @(posedge clk or negedge rst_n) begin
 			store =result;
 			addr = result;
 			hlt = ctrl_signals[3];
-		//	counter++;
+		
 		//$display("counter = %d\n" , counter);
 		//$display(" operation = %h \n   \ninput1 = %h\n dmResult = %h  \nresult = %h ", operation, input1, dmResult, result);
 
@@ -79,7 +83,8 @@ rf regFile(
 .outRt(input2),
 .writeData(store),
 .we(ctrl_signals[0]),
-.hlt(hlt)
+.hlt(hlt),
+.counter(counter)
 );
 	
 
