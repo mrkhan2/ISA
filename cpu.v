@@ -23,7 +23,7 @@ begin
 counter = 1;
 end
 
-//PROGRAM COUNTER
+//PROGRAM COUNTER AND DATA PIPELINE INITIALZATION
 always @(posedge clk or negedge rst_n) begin 
 counter++;
 		if (hlt) begin
@@ -92,9 +92,9 @@ Control CONTROL(
 
 hazard hdu(
 	.opcode(operation[12:9]),
-	.if_id_rs(id_exRs), 
-	.if_id_rt(id_exRt), 
-	.id_ex_rt(id_exRd), 
+	.if_idRs(Rs), 
+	.if_idRt(Rt), 
+	.id_exRt(id_exRd), 
 	.id_ex_mr(ctrl_signals[0]), 
 
 	.pc_write(pc_write), 
@@ -131,14 +131,13 @@ ALU alu(
 
 
 // FORWARDING UNIT
-forward forward_unit(
-	.id_ex_rt(id_exRt), 
-	.id_ex_rs(id_exRs), 
-	.ex_mem_rd(ex_memRD), 
-	.mem_wb_rd(mem_wbRd), 
+forward forward(
+	.ex_memRD(ex_memRD), 
+	.mem_wbRd(mem_wbRd), 
+	.id_exRt(id_exRt), 
+	.id_exRs(id_exRs), 
 	.ex_mem_rw(ctrl_signals[2]), 
 	.mem_wb_rw(ctrl_signals[2]), 
-
 	.forwarda(forwardA), 
 	.forwardb(forwardB)
 );
