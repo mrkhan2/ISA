@@ -53,7 +53,7 @@ always @(posedge hlt)
   for(indx=0; indx<16; indx = indx+1) begin
     $display("Reg%d = %h",indx,regs[indx]);
     end
-$display("count = %d\n" , count);
+$display("Cycle Completed Count = %d\n" , count);
     end
 
 endmodule

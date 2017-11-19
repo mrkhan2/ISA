@@ -10,6 +10,9 @@ wire Z, N,V,br;
 wire [15:0] operation, input1, input2, result, dmResult, writeResult;
 reg [15:0] store, addr, counter, id_ex2, id_ex1 , ex_memResult , ex_mem2;
 reg [3:0] ex_memRD, mem_wbRd, id_exRd, id_exRs, id_exRt;
+reg [5:0] ctrl_ex;
+reg [4:0] ctrl_mem;
+reg [2:0] ctrl_wb;
 wire [3:0] Rs, Rd, Rt;
 wire[ 7:0] ctrl_signals;
 wire[2:0] cond;
@@ -40,8 +43,13 @@ counter++;
 			id_ex2 = 16'h0000;
 			ex_memResult = 16'h0000;
 			ex_mem2 = 16'h0000;		
+			ctrl_ex  <= 6'b000000;
+			ctrl_mem <= 5'b00000;
+			ctrl_wb <= 3'b000;
 			pc = 16'b0;
-		end else if(ctrl_signals[5])
+		end else begin
+
+			if(ctrl_signals[5])
 				pc = $signed(jReg);
 			else if(ctrl_signals[4])
 				pc = $signed(jCall);
@@ -49,6 +57,11 @@ counter++;
 				pc = $signed(brVal);
 			else pc= pc_incr;
 		
+			ctrl_ex  = (~ctrl_signals[0] & stall) ? 6'b00000 : ctrl_signals[5:0];
+			ctrl_mem <= ctrl_ex[4:0];
+			ctrl_wb <= ctrl_mem[2:0];
+
+		end
 			store =result;
 			addr = result;
 			hlt = ctrl_signals[3];
@@ -69,7 +82,7 @@ counter++;
 	end
 
 
-//BEGIN SINGLE CYCLE 
+//BEGIN CYCLE 
 
 instructionMem IM(
  .readAdr(pc),
@@ -91,15 +104,14 @@ Control CONTROL(
 
 
 hazard hdu(
-	.opcode(operation[12:9]),
-	.if_idRs(Rs), 
-	.if_idRt(Rt), 
-	.id_exRt(id_exRd), 
-	.id_ex_mr(ctrl_signals[0]), 
-
-	.pc_write(pc_write), 
-	.if_id_write(ctrl_signals[2]), 
-	.stall(stall)
+.opcode(operation[12:9]),
+.if_idRs(Rs), 
+.if_idRt(Rt), 
+.id_exRt(id_exRd), 
+.id_ex_mr(ctrl_signals[0]), 
+.pc_write(pc_write), 
+.if_id_write(ctrl_signals[2]), 
+.stall(stall)
 );
 
 
@@ -132,14 +144,14 @@ ALU alu(
 
 // FORWARDING UNIT
 forward forward(
-	.ex_memRD(ex_memRD), 
-	.mem_wbRd(mem_wbRd), 
-	.id_exRt(id_exRt), 
-	.id_exRs(id_exRs), 
-	.ex_mem_rw(ctrl_signals[2]), 
-	.mem_wb_rw(ctrl_signals[2]), 
-	.forwarda(forwardA), 
-	.forwardb(forwardB)
+.ex_memRD(ex_memRD), 
+.mem_wbRd(mem_wbRd), 
+.id_exRt(id_exRt), 
+.id_exRs(id_exRs), 
+.ex_memRegWr(ctrl_ex[1]), 
+.mem_wbRegWr(ctrl_wb[1]), 
+.forwarda(forwardA), 
+.forwardb(forwardB)
 );
 
 
