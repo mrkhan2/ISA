@@ -17,8 +17,8 @@ Files.txt has all the files to be compiled. Uncomment line 80 in cpu.v in order 
 Those two commands will run the program. The CPU runs all of my main modules:
 I-Mem
 RegFile
-Hazard.v
-Forward.v
+Hazard
+Forward
 ALU
 Control
 D-Mem

@@ -142,7 +142,6 @@ ALU alu(
 
 
 
-// FORWARDING UNIT
 forward forward(
 .ex_memRD(ex_memRD), 
 .mem_wbRd(mem_wbRd), 
