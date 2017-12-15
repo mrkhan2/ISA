@@ -7,7 +7,7 @@ output reg hlt;       	// Halt signal
 output reg [15:0] pc; 	// Program counter
 
 wire Z, N,V,br;
-wire [15:0] operation, input1, input2, result, dmResult, writeResult;
+wire [15:0] operation, input1, input2, result, dmResult,dMresult, writeResult, operatin;
 reg [15:0] store, addr, counter, id_ex2, id_ex1 , ex_memResult , ex_mem2;
 reg [3:0] ex_memRD, mem_wbRd, id_exRd, id_exRs, id_exRt;
 reg [5:0] ctrl_ex;
@@ -20,6 +20,7 @@ wire [15:0] pc_incr, jReg, jCall ,brVal;
 wire [11:0] call;
 wire [8:0] imm;
 wire [1:0] forwardA, forwardB;
+wire mem_ready;
 
 initial 
 begin
@@ -81,13 +82,40 @@ counter++;
 
 	end
 
+	
+instructionMem IM(
+ .readAdr(pc),
+
+
+ .readData(operation)	
+ );
+ dataMem DM (
+.adr(addr),
+
+.readData(dmResult),
+
+.writeEn(ctrl_signals[2]),
+.writeData(input2) 
+);
+
 
 //BEGIN CYCLE 
 
-instructionMem IM(
- .readAdr(pc),
- .readData(operation)	
- );
+
+sys_mem memory(
+	.clk(clk),
+	.rst_n(rst_n),
+	.fetch(br),
+	.re(ctrl_signals[1]),
+	.we(ctrl_signals[2]),
+	.writeData(input2),
+	.iaddr(pc),
+	.daddr(addr),
+
+	.instruction(operatin),
+	.readData(dMresult),
+	.ready(mem_ready)
+);
 
 
 Control CONTROL(
@@ -154,13 +182,6 @@ forward forward(
 );
 
 
-
-dataMem DM (
-.adr(addr),
-.readData(dmResult),
-.writeEn(ctrl_signals[2]),
-.writeData(input2) 
-);
 
 assign pc_incr = pc+1;
 assign jReg = $signed(result);

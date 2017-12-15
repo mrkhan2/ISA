@@ -14,7 +14,7 @@ module instructionMem( readAdr,readData);
 		for(i=0;i<(1<<15);i=i+1)
 			mem[i] = 0;
 
-		$readmemb("test3.list", mem);
+		$readmemb("test4.list", mem);
 
 		//for(i=0;i<35;i=i+1)begin
 		//				$display("mem[%d]= %b. PC = %b" ,i,mem[i] ,readAdr );

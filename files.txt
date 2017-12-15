@@ -1,5 +1,8 @@
 control.v
 branch.v
+cache.v
+cache_control.v
+sys_mem.v
 alu.v
 dataMem.v
 forward.v
